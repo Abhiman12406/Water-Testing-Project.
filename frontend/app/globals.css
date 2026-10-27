@@ -1,0 +1,316 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@600;700;800;900&display=swap');
+@import "tailwindcss";
+
+:root {
+  /* Neo-Brutalism Light Palette */
+  --neo-bg: #f7f4ec;
+  --neo-bg-dot: rgba(0, 0, 0, 0.12);
+  --neo-surface: #ffffff;
+  --neo-surface-alt: #ede8dc;
+  --neo-surface-highlight: #fffbe8;
+  --neo-border: #000000;
+  --neo-shadow: #000000;
+  --neo-text: #050505;
+  --neo-text-muted: #2d3748;
+  --neo-text-dim: #5a6578;
+
+  /* Signature Punchy Neo-Brutalism Accents */
+  --neo-yellow: #ffde59;
+  --neo-yellow-light: #fff5be;
+  --neo-cyan: #38bdf8;
+  --neo-cyan-light: #bae6fd;
+  --neo-green: #4ade80;
+  --neo-green-light: #bbf7d0;
+  --neo-red: #ff5757;
+  --neo-red-light: #fecdd3;
+  --neo-purple: #c084fc;
+  --neo-purple-light: #f3e8ff;
+  --neo-orange: #fb923c;
+  --neo-orange-light: #fed7aa;
+  --neo-pink: #f472b6;
+}
+
+[data-theme="dark"] {
+  /* Cyber-Brutalism Dark Palette */
+  --neo-bg: #0d0f14;
+  --neo-bg-dot: rgba(56, 189, 248, 0.18);
+  --neo-surface: #151821;
+  --neo-surface-alt: #1f2330;
+  --neo-surface-highlight: #252a3a;
+  --neo-border: #ffffff;
+  --neo-shadow: #38bdf8; /* Electric Cyan hard drop shadow */
+  --neo-text: #ffffff;
+  --neo-text-muted: #e2e8f0;
+  --neo-text-dim: #94a3b8;
+
+  --neo-yellow: #fde047;
+  --neo-yellow-light: #423b0a;
+  --neo-cyan: #38bdf8;
+  --neo-cyan-light: #083344;
+  --neo-green: #4ade80;
+  --neo-green-light: #052e16;
+  --neo-red: #f87171;
+  --neo-red-light: #450a0a;
+  --neo-purple: #c084fc;
+  --neo-purple-light: #3b0764;
+  --neo-orange: #fb923c;
+  --neo-orange-light: #431407;
+  --neo-pink: #f472b6;
+}
+
+body {
+  background-color: var(--neo-bg);
+  background-image: radial-gradient(var(--neo-bg-dot) 1.5px, transparent 1.5px);
+  background-size: 22px 22px;
+  background-position: 0 0;
+  color: var(--neo-text);
+  font-family: 'Space Grotesk', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  letter-spacing: -0.015em;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+/* Monospace font utility for metrics & telemetry */
+.font-mono {
+  font-family: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+}
+
+/* Neo-Brutalism Box Cards */
+.neo-box {
+  background-color: var(--neo-surface);
+  border: 2.5px solid var(--neo-border);
+  box-shadow: 4px 4px 0px 0px var(--neo-shadow);
+  border-radius: 8px;
+  transition: all 0.15s cubic-bezier(0.2, 0, 0, 1);
+}
+
+.neo-box-sm {
+  background-color: var(--neo-surface);
+  border: 2px solid var(--neo-border);
+  box-shadow: 3px 3px 0px 0px var(--neo-shadow);
+  border-radius: 6px;
+  transition: all 0.15s cubic-bezier(0.2, 0, 0, 1);
+}
+
+.neo-box-inset {
+  background-color: var(--neo-surface-alt);
+  border: 2px solid var(--neo-border);
+  border-radius: 6px;
+}
+
+/* Interactive Neo-Brutalism hover & active press */
+.neo-interactive {
+  cursor: pointer;
+  transition: transform 0.12s cubic-bezier(0.2, 0, 0, 1), box-shadow 0.12s cubic-bezier(0.2, 0, 0, 1), background-color 0.12s ease;
+}
+
+.neo-interactive:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0px 0px var(--neo-shadow);
+}
+
+.neo-interactive:active {
+  transform: translate(2px, 2px);
+  box-shadow: 1px 1px 0px 0px var(--neo-shadow);
+}
+
+/* Neo-Brutalism Action Buttons */
+.neo-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  border: 2.5px solid var(--neo-border);
+  box-shadow: 3.5px 3.5px 0px 0px var(--neo-shadow);
+  border-radius: 6px;
+  cursor: pointer;
+  transition: transform 0.1s cubic-bezier(0.2, 0, 0, 1), box-shadow 0.1s cubic-bezier(0.2, 0, 0, 1), background-color 0.15s ease;
+  user-select: none;
+}
+
+.neo-btn:hover {
+  transform: translate(-1.5px, -1.5px);
+  box-shadow: 5px 5px 0px 0px var(--neo-shadow);
+}
+
+.neo-btn:active {
+  transform: translate(2px, 2px);
+  box-shadow: 0px 0px 0px 0px var(--neo-shadow);
+}
+
+.neo-btn-primary {
+  background-color: var(--neo-yellow);
+  color: #000000;
+}
+
+.neo-btn-cyan {
+  background-color: var(--neo-cyan);
+  color: #000000;
+}
+
+.neo-btn-green {
+  background-color: var(--neo-green);
+  color: #000000;
+}
+
+.neo-btn-surface {
+  background-color: var(--neo-surface);
+  color: var(--neo-text);
+}
+
+/* Neo-Brutalism Sticker Badges */
+.neo-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-family: 'JetBrains Mono', monospace;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 0.6875rem;
+  padding: 0.2rem 0.55rem;
+  border: 1.5px solid var(--neo-border);
+  box-shadow: 2px 2px 0px 0px var(--neo-shadow);
+  border-radius: 4px;
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+}
+
+/* Neo-Brutalist Form Inputs */
+.neo-input {
+  background-color: var(--neo-surface);
+  border: 2px solid var(--neo-border);
+  box-shadow: 2.5px 2.5px 0px 0px var(--neo-shadow);
+  border-radius: 6px;
+  color: var(--neo-text);
+  transition: all 0.12s ease;
+}
+
+.neo-input:focus {
+  outline: none;
+  box-shadow: 4px 4px 0px 0px var(--neo-shadow);
+  transform: translate(-1px, -1px);
+}
+
+/* Neo-Brutalist Segmented Tabs */
+.neo-tab-group {
+  background-color: var(--neo-surface-alt);
+  border: 2px solid var(--neo-border);
+  box-shadow: 3px 3px 0px 0px var(--neo-shadow);
+  border-radius: 8px;
+  padding: 4px;
+  display: inline-flex;
+  gap: 4px;
+}
+
+.neo-tab-item {
+  border: 1.5px solid transparent;
+  border-radius: 6px;
+  font-weight: 700;
+  font-size: 0.75rem;
+  padding: 0.4rem 0.85rem;
+  color: var(--neo-text-muted);
+  cursor: pointer;
+  transition: all 0.12s ease;
+}
+
+.neo-tab-item:hover {
+  color: var(--neo-text);
+  background-color: rgba(255, 255, 255, 0.4);
+}
+
+.neo-tab-item.active {
+  background-color: var(--neo-yellow);
+  color: #000000;
+  border: 2px solid var(--neo-border);
+  box-shadow: 2px 2px 0px 0px var(--neo-shadow);
+}
+
+[data-theme="dark"] .neo-tab-item.active {
+  background-color: var(--neo-cyan);
+  color: #000000;
+  border: 2px solid #ffffff;
+}
+
+/* Custom Neo-Brutalist Range Slider */
+input[type="range"] {
+  -webkit-appearance: none;
+  appearance: none;
+  background: var(--neo-surface-alt);
+  height: 10px;
+  border: 2px solid var(--neo-border);
+  border-radius: 4px;
+  outline: none;
+  box-shadow: 2px 2px 0px 0px var(--neo-shadow);
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 22px;
+  height: 22px;
+  border-radius: 4px;
+  background: var(--neo-yellow);
+  border: 2.5px solid var(--neo-border);
+  box-shadow: 2px 2px 0px 0px var(--neo-shadow);
+  cursor: pointer;
+  transition: transform 0.1s ease, background-color 0.1s ease;
+}
+
+[data-theme="dark"] input[type="range"]::-webkit-slider-thumb {
+  background: var(--neo-cyan);
+  border-color: #ffffff;
+}
+
+input[type="range"]::-webkit-slider-thumb:hover {
+  transform: scale(1.15);
+}
+
+input[type="range"]::-webkit-slider-thumb:active {
+  transform: scale(0.95);
+  background: var(--neo-green);
+}
+
+/* Striped Hazard Banner Pattern for Alerts */
+.neo-hazard-stripe {
+  background: repeating-linear-gradient(
+    45deg,
+    rgba(0, 0, 0, 0.08),
+    rgba(0, 0, 0, 0.08) 10px,
+    transparent 10px,
+    transparent 20px
+  );
+}
+
+[data-theme="dark"] .neo-hazard-stripe {
+  background: repeating-linear-gradient(
+    45deg,
+    rgba(255, 255, 255, 0.08),
+    rgba(255, 255, 255, 0.08) 10px,
+    transparent 10px,
+    transparent 20px
+  );
+}
+
+/* Neo-Brutalist Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--neo-surface-alt);
+  border-left: 2px solid var(--neo-border);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--neo-yellow);
+  border: 2px solid var(--neo-border);
+  box-shadow: 1px 1px 0px 0px var(--neo-shadow);
+}
+
+[data-theme="dark"] ::-webkit-scrollbar-thumb {
+  background: var(--neo-cyan);
+  border-color: #ffffff;
+}
